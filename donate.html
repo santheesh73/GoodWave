@@ -96,10 +96,10 @@
 <span class="block font-headline-md text-on-surface group-hover:text-primary">₹2500</span>
 <span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: High Velocity</span>
 </button>
-<button class="lg:col-span-2 glass-card rounded-xl p-6 flex flex-col justify-center items-center gap-2 hover:border-primary transition-all group active:scale-95">
-<input class="bg-transparent border-none text-center font-headline-md text-on-surface placeholder:text-on-surface-variant focus:ring-0 w-full" placeholder="Enter Custom Amount" type="text" id="custom-amount"/>
+<div class="lg:col-span-2 glass-card rounded-xl p-6 flex flex-col justify-center items-center gap-2 hover:border-primary transition-all group cursor-pointer" onclick="document.getElementById('custom-amount').focus()">
+<input class="bg-transparent border-none text-center font-headline-md text-on-surface placeholder:text-on-surface-variant focus:ring-0 w-full pointer-events-auto" placeholder="Enter Custom Amount" type="text" id="custom-amount"/>
 <div class="h-[1px] w-1/2 bg-surface-variant group-focus-within:bg-primary transition-all"></div>
-</button>
+</div>
 </div>
 
 <div class="pt-6 border-t border-white/5 flex flex-col gap-4">
@@ -109,7 +109,7 @@
 </div>
 </div>
 
-<a href="programs.html" class="w-full bg-primary text-on-primary py-4 rounded-full font-headline-md text-headline-md tracking-tight neon-glow hover:bg-opacity-90 active:scale-[0.98] transition-all text-center block">CONTINUE TO PROGRAMS</a>
+<a href="programs.html" class="w-fit mx-auto bg-primary text-on-primary px-12 py-3 rounded-full font-label-caps text-label-caps tracking-widest neon-glow hover:bg-opacity-90 active:scale-[0.98] transition-all text-center block">CONTINUE TO PROGRAMS</a>
 </div>
 </div>
 
@@ -200,18 +200,46 @@ const impacts = {
 
 amountBtns.forEach(btn => {
   btn.addEventListener('click', () => {
+    // Reset all
     amountBtns.forEach(b => {
       b.classList.remove('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50', 'selected');
       b.querySelector('span:first-child')?.classList.remove('text-primary');
       b.querySelector('span:first-child')?.classList.add('text-on-surface');
     });
+    document.getElementById('custom-amount').parentElement.classList.remove('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50');
+    
+    // Select current
     btn.classList.add('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50', 'selected');
     btn.querySelector('span:first-child')?.classList.add('text-primary');
     btn.querySelector('span:first-child')?.classList.remove('text-on-surface');
+    
     const amt = btn.dataset.amount;
     displayAmount.textContent = '₹' + Number(amt).toFixed(2);
     impactMsg.textContent = impacts[amt] || '₹' + amt + ' will create measurable social impact.';
+    document.getElementById('custom-amount').value = ''; // Clear custom if preset selected
   });
+});
+
+const customInput = document.getElementById('custom-amount');
+customInput.addEventListener('input', (e) => {
+  const amt = e.target.value.replace(/[^0-9.]/g, '');
+  if (amt) {
+    // Deselect presets
+    amountBtns.forEach(b => {
+      b.classList.remove('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50', 'selected');
+      b.querySelector('span:first-child')?.classList.remove('text-primary');
+      b.querySelector('span:first-child')?.classList.add('text-on-surface');
+    });
+    // Select custom button
+    customInput.parentElement.classList.add('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50');
+    
+    displayAmount.textContent = '₹' + (parseFloat(amt) || 0).toFixed(2);
+    impactMsg.textContent = '₹' + amt + ' will create measurable social impact focused on your chosen mission.';
+  }
+});
+
+customInput.addEventListener('focus', () => {
+  customInput.parentElement.classList.add('border-primary', 'bg-primary/10');
 });
 </script>
 <script src="nav.js"></script>

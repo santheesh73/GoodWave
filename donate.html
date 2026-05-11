@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoodWave | Donate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="tailwind.config.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary selection:text-on-primary">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+<div class="flex justify-between items-center px-4 md:px-12 h-20 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" id="menu-toggle">menu</span>
+<a href="index.html" class="font-display-xl text-headline-md tracking-tighter text-primary">GoodWave</a>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="index.html">HOME</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="programs.html">PROGRAMS</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="impact.html">IMPACT</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="program-detail.html">TRANSPARENCY</a>
+</nav>
+<a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-all duration-300">DONATE</a>
+</div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-80 rounded-r-3xl bg-surface-container-lowest/95 backdrop-blur-2xl border-r border-white/5 shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full" id="nav-drawer">
+<div class="p-8 flex items-center justify-between border-b border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined">person</span></div>
+<div><p class="font-bold text-primary">GoodWave Member</p><p class="text-xs text-on-surface-variant">Impact Level: Visionary</p></div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" id="drawer-close">close</span>
+</div>
+<nav class="flex-1 py-8">
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="index.html"><span class="material-symbols-outlined">home</span> Home</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="programs.html"><span class="material-symbols-outlined">folder_special</span> Programs</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="impact.html"><span class="material-symbols-outlined">query_stats</span> Impact</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="program-detail.html"><span class="material-symbols-outlined">account_balance</span> Transparency</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="donate.html"><span class="material-symbols-outlined">volunteer_activism</span> Donate</a>
+</nav>
+</div>
+<div class="fixed inset-0 bg-black/50 z-[55] hidden" id="drawer-overlay"></div>
+
+<main class="pt-32 pb-12 px-4">
+<!-- Emotional Quote -->
+<div class="max-w-[800px] mx-auto text-center mb-10">
+<span class="material-symbols-outlined text-primary/30 text-5xl mb-3 block">diversity_1</span>
+<blockquote class="font-display-xl text-headline-lg-mobile md:text-headline-lg tracking-tight leading-snug mb-4">
+"Your <span class="text-gradient">generosity</span> is not charity — it is an investment in human dignity."
+</blockquote>
+<p class="font-body-md text-body-md text-on-surface-variant">Every rupee you give restores hope, rebuilds lives, and rewrites futures. Together, we are unstoppable.</p>
+</div>
+
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Form Area -->
+<div class="lg:col-start-2 lg:col-span-7 flex flex-col gap-6">
+<!-- Progress Indicator -->
+<div class="glass-card rounded-2xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-primary">TRANSACTION STEP 1/3</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">FUNDING ALLOCATION</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-gradient-to-r from-primary to-secondary rounded-full relative progress-glow">
+<div class="absolute right-0 top-0 h-full w-2 bg-white blur-[2px]"></div>
+</div>
+</div>
+</div>
+
+<!-- Amount Selection -->
+<div class="glass-card rounded-3xl p-8 md:p-12 flex flex-col gap-6 relative overflow-hidden">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Choose Amount</h2>
+<p class="text-on-surface-variant font-body-md">Precision-targeted funding for maximum scalability.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="amount-grid">
+<button class="glass-card rounded-xl p-6 text-center hover:border-primary transition-all group active:scale-95 amount-btn" data-amount="250">
+<span class="block font-headline-md text-on-surface group-hover:text-primary">₹250</span>
+<span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: Entry Level</span>
+</button>
+<button class="glass-card rounded-xl p-6 text-center border-primary bg-primary/10 transition-all group active:scale-95 ring-1 ring-primary/50 amount-btn selected" data-amount="500">
+<span class="block font-headline-md text-primary">₹500</span>
+<span class="text-xs text-primary/70">Most Popular</span>
+</button>
+<button class="glass-card rounded-xl p-6 text-center hover:border-primary transition-all group active:scale-95 amount-btn" data-amount="1000">
+<span class="block font-headline-md text-on-surface group-hover:text-primary">₹1000</span>
+<span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: Strategic</span>
+</button>
+<button class="glass-card rounded-xl p-6 text-center hover:border-primary transition-all group active:scale-95 amount-btn" data-amount="2500">
+<span class="block font-headline-md text-on-surface group-hover:text-primary">₹2500</span>
+<span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: High Velocity</span>
+</button>
+<button class="lg:col-span-2 glass-card rounded-xl p-6 flex flex-col justify-center items-center gap-2 hover:border-primary transition-all group active:scale-95">
+<input class="bg-transparent border-none text-center font-headline-md text-on-surface placeholder:text-on-surface-variant focus:ring-0 w-full" placeholder="Enter Custom Amount" type="text" id="custom-amount"/>
+<div class="h-[1px] w-1/2 bg-surface-variant group-focus-within:bg-primary transition-all"></div>
+</button>
+</div>
+
+<div class="pt-6 border-t border-white/5 flex flex-col gap-4">
+<div class="flex items-center gap-4 bg-primary/5 p-4 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary">verified</span>
+<p class="font-body-md text-primary" id="impact-message">₹500 = 10 high-nutrition meals for rural students in primary schools.</p>
+</div>
+</div>
+
+<a href="programs.html" class="w-full bg-primary text-on-primary py-4 rounded-full font-headline-md text-headline-md tracking-tight neon-glow hover:bg-opacity-90 active:scale-[0.98] transition-all text-center block">CONTINUE TO PROGRAMS</a>
+</div>
+</div>
+
+<!-- Summary Sidebar -->
+<aside class="lg:col-span-4 sticky top-32 flex flex-col gap-6">
+<div class="glass-card rounded-3xl p-6 flex flex-col gap-6">
+<h3 class="font-headline-md text-[20px] text-on-surface">Live Impact Summary</h3>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="text-on-surface-variant">Selected Amount</span>
+<span class="text-primary font-bold" id="display-amount">₹500.00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="text-on-surface-variant">Mission Focus</span>
+<span class="text-on-surface">Unassigned</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-on-surface-variant">Tax Benefits</span>
+<span class="text-tertiary">80G Eligible</span>
+</div>
+</div>
+<div class="media-motion-frame rounded-2xl overflow-hidden aspect-video relative">
+<img alt="Social Impact" class="media-motion-image opacity-60" src="images/donate_sidebar.png"/>
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-[10px] font-label-caps text-on-surface tracking-widest uppercase">Project Site: TN-04</span>
+</div>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant text-center leading-relaxed">Your contribution is processed via a 256-bit encrypted gateway. Every rupee is trackable through our Transparency Portal.</p>
+</div>
+<div class="glass-card rounded-2xl p-4 flex items-center gap-4 border-primary/20">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center"><span class="material-symbols-outlined text-primary">security</span></div>
+<div>
+<p class="text-sm font-bold text-on-surface">Precision Security</p>
+<p class="text-xs text-on-surface-variant">PCI-DSS Compliant Infrastructure</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+
+<!-- Success Modal (hidden) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 backdrop-blur-2xl bg-background/80" id="success-state">
+<div class="glass-card max-w-xl w-full rounded-[40px] p-12 flex flex-col items-center text-center gap-6">
+<div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center border border-primary/30 neon-glow">
+<span class="material-symbols-outlined text-[48px] text-primary">check_circle</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="font-display-xl text-headline-md tracking-tighter text-primary">THANK YOU!</h2>
+<p class="font-headline-md text-[20px] text-on-surface">Your donation creates measurable impact.</p>
+</div>
+<p class="text-on-surface-variant">The GoodWave algorithm has successfully allocated your contribution to the Rural Education Program.</p>
+<a href="index.html" class="px-8 py-3 bg-surface-container-highest text-primary rounded-full font-label-caps border border-primary/20 hover:bg-surface-variant transition-all">VIEW LIVE IMPACT</a>
+</div>
+</div>
+
+<footer class="bg-surface-container-lowest w-full rounded-t-[32px] border-t border-white/10">
+<div class="max-w-[1280px] mx-auto px-4 md:px-12 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<h2 class="font-headline-md text-on-surface">GoodWave</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 GoodWave. Engineering Social Good with Precision.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="programs.html">Programs</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Transparency</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+// Amount selection logic
+const amountBtns = document.querySelectorAll('.amount-btn');
+const displayAmount = document.getElementById('display-amount');
+const impactMsg = document.getElementById('impact-message');
+const impacts = {
+  250: '₹250 = 5 nutritious meals for children in urban slums.',
+  500: '₹500 = 10 high-nutrition meals for rural students in primary schools.',
+  1000: '₹1000 = 1 month of digital learning access for a village classroom.',
+  2500: '₹2500 = Full semester sponsorship for one rural student.'
+};
+
+amountBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    amountBtns.forEach(b => {
+      b.classList.remove('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50', 'selected');
+      b.querySelector('span:first-child')?.classList.remove('text-primary');
+      b.querySelector('span:first-child')?.classList.add('text-on-surface');
+    });
+    btn.classList.add('border-primary', 'bg-primary/10', 'ring-1', 'ring-primary/50', 'selected');
+    btn.querySelector('span:first-child')?.classList.add('text-primary');
+    btn.querySelector('span:first-child')?.classList.remove('text-on-surface');
+    const amt = btn.dataset.amount;
+    displayAmount.textContent = '₹' + Number(amt).toFixed(2);
+    impactMsg.textContent = impacts[amt] || '₹' + amt + ' will create measurable social impact.';
+  });
+});
+</script>
+<script src="nav.js"></script>
+</body></html>

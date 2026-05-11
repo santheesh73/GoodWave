@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIDIYAL | Engineering Social Good</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(20, 18, 24, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #cfbcff 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #6750a4 0%, #06B6D4 100%);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-primary-container": "#e0d2ff",
+                "secondary": "#cdc0e9",
+                "surface-dim": "#141218",
+                "surface-variant": "#36343a",
+                "on-tertiary": "#3e2e00",
+                "tertiary-fixed": "#ffdf93",
+                "inverse-on-surface": "#322f35",
+                "on-tertiary-container": "#503d00",
+                "on-tertiary-fixed": "#241a00",
+                "on-primary": "#381e72",
+                "secondary-fixed": "#e9ddff",
+                "secondary-fixed-dim": "#cdc0e9",
+                "on-secondary-fixed": "#1f1635",
+                "tertiary": "#e7c365",
+                "outline-variant": "#494551",
+                "on-surface-variant": "#cbc4d2",
+                "primary-fixed-dim": "#cfbcff",
+                "on-surface": "#e6e0e9",
+                "tertiary-container": "#c9a74d",
+                "on-secondary-container": "#bfb2da",
+                "background": "#141218",
+                "error-container": "#93000a",
+                "surface": "#141218",
+                "primary": "#cfbcff",
+                "surface-tint": "#cfbcff",
+                "surface-container-highest": "#36343a",
+                "on-error": "#690005",
+                "on-primary-fixed": "#22005d",
+                "on-background": "#e6e0e9",
+                "secondary-container": "#4d4465",
+                "on-tertiary-fixed-variant": "#594400",
+                "on-secondary": "#342b4b",
+                "inverse-primary": "#6750a4",
+                "tertiary-fixed-dim": "#e7c365",
+                "primary-container": "#6750a4",
+                "surface-container-high": "#2b292f",
+                "error": "#ffb4ab",
+                "primary-fixed": "#e9ddff",
+                "on-error-container": "#ffdad6",
+                "inverse-surface": "#e6e0e9",
+                "on-secondary-fixed-variant": "#4b4263",
+                "surface-container-low": "#1d1b20",
+                "surface-container-lowest": "#0f0d13",
+                "surface-bright": "#3b383e",
+                "outline": "#948e9c",
+                "on-primary-fixed-variant": "#4f378a",
+                "surface-container": "#211f24"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "stack-sm": "8px",
+                "stack-lg": "48px",
+                "stack-md": "24px",
+                "margin-mobile": "16px",
+                "container-max": "1280px",
+                "unit": "4px",
+                "gutter": "24px",
+                "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                "headline-md": ["Geist"],
+                "body-md": ["Geist"],
+                "headline-lg": ["Geist"],
+                "body-lg": ["Geist"],
+                "headline-lg-mobile": ["Geist"],
+                "display-xl": ["Geist"],
+                "label-caps": ["Geist"]
+              },
+              "fontSize": {
+                "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 dark:bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-display-xl text-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim">VIDIYAL</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary py-2 font-label-caps text-label-caps" href="#">DASHBOARD</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">PROGRAMS</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">IMPACT</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">TRANSPARENCY</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-all duration-300">
+                DONATE
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center text-center px-margin-mobile overflow-hidden">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="z-10 max-w-4xl">
+<span class="inline-block px-4 py-1 rounded-full border border-primary/30 text-primary font-label-caps text-label-caps mb-6 bg-primary/5">MISSION CONTROL FOR GOOD</span>
+<h2 class="font-display-xl text-headline-lg-mobile md:text-display-xl mb-6">
+                    Every Donation <span class="text-gradient">Creates a Future</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    We bridge the gap between compassion and impact. Engineering social change through precision data and visionary human intent.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="btn-gradient px-10 py-4 rounded-full text-white font-label-caps text-label-caps text-lg tracking-widest hover:scale-105 transition-all">
+                        DONATE NOW
+                    </button>
+<button class="px-10 py-4 rounded-full border border-white/10 glass-card text-on-surface font-label-caps text-label-caps hover:bg-white/5 transition-all">
+                        EXPLORE PROGRAMS
+                    </button>
+</div>
+</div>
+<!-- Floating Impact Cards (Bento Style) -->
+<div class="mt-20 w-full max-w-container-max grid grid-cols-1 md:grid-cols-3 gap-gutter z-10 px-margin-mobile">
+<div class="glass-card p-8 rounded-3xl glow-cyan flex flex-col items-center justify-center group hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="diversity_3">diversity_3</span>
+<h3 class="font-display-xl text-headline-md text-primary">12.5k+</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Lives Impacted</p>
+</div>
+<div class="glass-card p-8 rounded-3xl glow-cyan flex flex-col items-center justify-center group hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="public">public</span>
+<h3 class="font-display-xl text-headline-md text-primary">48</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Communities</p>
+</div>
+<div class="glass-card p-8 rounded-3xl glow-cyan flex flex-col items-center justify-center group hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="verified">verified</span>
+<h3 class="font-display-xl text-headline-md text-primary">95%</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Funds to Programs</p>
+</div>
+</div>
+</section>
+<!-- Impact Statistics Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">Precision-Driven Impact</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Every rupee is accounted for. Real-time data visualization of our reach across the nation.</p>
+</div>
+<button class="text-primary font-label-caps text-label-caps flex items-center gap-2 group">
+                    VIEW FULL REPORT <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-primary font-label-caps text-label-caps mb-2">EDUCATION REACH</p>
+<h4 class="font-headline-md text-headline-md mb-8">8,400+ Students Enrolled</h4>
+<div class="w-full h-2 bg-surface-container-highest rounded-full mb-4 overflow-hidden">
+<div class="h-full w-[85%] btn-gradient rounded-full"></div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md">85% towards yearly goal</p>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[200px]" data-icon="school">school</span>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-8 group">
+<p class="text-tertiary font-label-caps text-label-caps mb-2">HEALTHCARE</p>
+<h4 class="font-headline-md text-headline-md mb-2">250+</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Successful surgeries funded this quarter.</p>
+<div class="mt-10 flex -space-x-4">
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container"></div>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-8 group">
+<p class="text-primary font-label-caps text-label-caps mb-2">REACH</p>
+<h4 class="font-headline-md text-headline-md mb-2">12</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">States actively receiving program support.</p>
+<span class="material-symbols-outlined text-primary text-4xl mt-10" data-icon="map">map</span>
+</div>
+</div>
+</section>
+<!-- Featured Programs Section -->
+<section class="py-stack-lg bg-surface-container-lowest/50">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Core Missions</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">Scalable solutions for systemic challenges in rural and underserved urban areas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="group cursor-pointer">
+<div class="rounded-[32px] overflow-hidden mb-6 aspect-video relative">
+<img alt="Rural Education" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A group of bright-eyed children in a rural classroom setting, looking up at a modern digital tablet screen. The lighting is warm and natural, filtering through a window, highlighting their expressions of wonder and curiosity. The overall style is cinematic and high-contrast, emphasizing hope and the bridge between traditional settings and modern technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTuJp6jiG37kO65zA1uVdQ6pBbNH1t4UggsL1RfQUnKD2f8qzA7lEjfvcZ52MCVES6Q5bQ1u_ArXfFDQmtLInh3_2Li_DTDSA9NdZgbAuuL_Kw46lQvgqjkPOlsGFa3IXRXyOXhISLaJUJkwx7mHvkDRBX-zzXl5UYoQ7aPe-N-TPI-cOUMHWZi_7gJ-aM33GBGQLLbI5ZSsGpv68prlMJfeOIQZpYhNh9AF7Tbko6FKuGAix84wd0H7n4shXQ2K_XVVCDcaAb8_w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-8">
+<span class="bg-primary/20 backdrop-blur-md text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] w-fit mb-2">EDUCATION</span>
+<h3 class="text-white font-headline-md text-headline-md">Rural Education Initiative</h3>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 px-2">Bridging the digital divide for over 50,000 students in isolated villages through tech-enabled learning centers.</p>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group ml-2" href="#">
+                            LEARN MORE <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</a>
+</div>
+<div class="group cursor-pointer">
+<div class="rounded-[32px] overflow-hidden mb-6 aspect-video relative">
+<img alt="Mobile Health Clinics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A modern, high-tech mobile clinic van parked in a remote village area. A medical professional in a clean white coat is greeting an elderly patient. The scene is shot during the golden hour, with long soft shadows and a warm neon-glow aesthetic reflecting off the clinic's glass panels. The mood is professional, efficient, and compassionate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD60DFsWNoC9K2se-D1ETba6EVdQWCOh54k40F0SknkPDqVJr2HVMDjf6e5bD-luzfJZZBEaa07vbvJW3Wgjejy1A12av-O5k9dmY3nU9NLki8-RJjIvpo4N0hTPextqYzqyKveoEem5eJaDEDwYTe-NDBhYcf9ZoPiSLg7ezLR6uaefkORbhgoTGFtUhXFi-dID57xzcO69-t3-pmvuoX8ZWXkbzrZSio6pBKwQmaERTWvNDHtHXXppsLvgKeuKrGWD7I1DbQzAig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-8">
+<span class="bg-tertiary/20 backdrop-blur-md text-tertiary border border-tertiary/30 px-3 py-1 rounded-full text-[10px] w-fit mb-2">HEALTHCARE</span>
+<h3 class="text-white font-headline-md text-headline-md">Mobile Health Clinics</h3>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 px-2">Specialized medical units providing diagnosis, primary care, and vaccinations to regions without hospital access.</p>
+<a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group ml-2" href="#">
+                            LEARN MORE <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Donation Impact Scale -->
+<section class="py-stack-lg px-margin-mobile">
+<div class="max-w-4xl mx-auto glass-card rounded-[40px] p-10 md:p-16 text-center glow-cyan">
+<h2 class="font-headline-lg text-headline-lg mb-4">How your donation helps</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-12">Small contributions powered by high-efficiency logistics lead to massive outcomes.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/40 transition-colors">
+<h4 class="text-primary font-display-xl text-headline-md mb-2">₹250</h4>
+<p class="font-body-md text-body-md text-on-surface">5 Full Meals</p>
+<p class="text-on-surface-variant text-sm mt-2">Nutritious hot meals for children in urban slums.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/40 transition-colors">
+<h4 class="text-primary font-display-xl text-headline-md mb-2">₹1,200</h4>
+<p class="font-body-md text-body-md text-on-surface">1 Month Education</p>
+<p class="text-on-surface-variant text-sm mt-2">Books, digital access, and tutoring for one student.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/40 transition-colors">
+<h4 class="text-primary font-display-xl text-headline-md mb-2">₹5,000</h4>
+<p class="font-body-md text-body-md text-on-surface">Medical Camp</p>
+<p class="text-on-surface-variant text-sm mt-2">Complete diagnostic camp for an entire village.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories (Minimalist Glass Carousel Style) -->
+<section class="py-stack-lg overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-12">The Human Story</h2>
+<div class="flex gap-8 overflow-x-auto pb-10 scrollbar-hide">
+<div class="min-w-[320px] md:min-w-[450px] glass-card rounded-3xl p-8 flex flex-col gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden">
+<img alt="Success Story 1" data-alt="A portrait of a young woman smiling confidently, wearing a professional modern outfit against a soft-focus office background. The lighting is cinematic with a teal and violet color grade, reflecting a high-octane tech aesthetic. She embodies the success and empowerment resulting from the foundation's programs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA47vrYAbjlxq10jMvCwuAchZ26a005xuQAzsqfzoZ1gU4UGmtVKRR6ISe6_sC_OnE8avPXSiaDbY6sUb3zxsx15yPxCBpyKlKUD3IFzPROZpTA4eGl046sxiv2ize5mHG7NFll1djTg-TxcjzMUFCB38OTZKiMtrhc95sAyAl4mGHEpCudidR-1EpTy7W7odqQ8XVpJ_zqAvScJyPrTf7YsSZmOjv9wCekAJKiNmuYRb6nAniF2-Obmjm0bAqyCy22g63Iz9dL8AI"/>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface">"VIDIYAL didn't just give me a scholarship; they gave me a path to becoming a software engineer. Today, I'm supporting my family and my community."</p>
+<div>
+<p class="font-bold text-primary">Ananya R.</p>
+<p class="text-on-surface-variant text-sm">Tech Fellowship Graduate</p>
+</div>
+</div>
+<div class="min-w-[320px] md:min-w-[450px] glass-card rounded-3xl p-8 flex flex-col gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden">
+<img alt="Success Story 2" data-alt="A portrait of a senior man with a kind, weathered face, wearing traditional but clean clothing. He is standing in front of a newly built community clinic that features glass and steel elements. The lighting is bright and optimistic, with a cool-toned atmospheric finish that emphasizes progress and dignity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_-2otPiSBSdmTjMbinpVWZiZQPC3YHS8_Z0_vHHN9BrYcN_-mJA5yg0ysb7pT4iO2jAujxWnVsEt3M36sQ0jnMmLSRdjWdcVmjv5BMj4GifCt2F7kqpCAvl7KnNMOjiFXzBWR-GF-LdGUgHNUvwBgwqVHeP08-J4h7dtdlf4b-ZOyv8dmeLEtJnNsdau1NS2jYTU2j0Ay9XnFc-AupcsZJBmzUNDS3hkctbMdsJ8RA66x8yTdUamz2JxvZq2oM_DXaIZEKaC3YHU"/>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface">"The mobile clinic saved my life when I couldn't travel to the city. Having doctors visit our village is a dream we never thought would come true."</p>
+<div>
+<p class="font-bold text-primary">Murugan S.</p>
+<p class="text-on-surface-variant text-sm">Community Elder</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Transparency Section -->
+<section class="py-stack-lg px-margin-mobile">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg mb-6">Transparency is our Core Code.</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-8">We believe you deserve to see exactly how your contribution is changing the world. Our ledger is open, our impact is audited, and our mission is absolute.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Quarterly audited financial reports available to all.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Real-time tracking for major community projects.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Zero administrative overhead on direct donations.</span>
+</li>
+</ul>
+</div>
+<div class="flex-1 w-full glass-card rounded-[40px] p-8 border-primary/20 bg-primary/5">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline-md text-headline-md">Fund Allocation</h4>
+<span class="material-symbols-outlined text-primary" data-icon="monitoring">monitoring</span>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-caps text-label-caps">Programs &amp; Impact</span>
+<span class="font-label-caps text-label-caps">95%</span>
+</div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+<div class="w-[95%] h-full btn-gradient"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-caps text-label-caps">Logistics &amp; Tech</span>
+<span class="font-label-caps text-label-caps">3%</span>
+</div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+<div class="w-[3%] h-full bg-tertiary"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-caps text-label-caps">Administration</span>
+<span class="font-label-caps text-label-caps">2%</span>
+</div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+<div class="w-[2%] h-full bg-on-surface-variant"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 py-4 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors font-label-caps text-label-caps">DOWNLOAD ANNUAL AUDIT</button>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-stack-lg text-center px-margin-mobile">
+<div class="max-w-4xl mx-auto py-20 rounded-[40px] bg-gradient-to-br from-primary-container/20 to-secondary-container/20 border border-white/10 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6 relative z-10">Ready to build the future?</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-10 relative z-10 max-w-xl mx-auto">Join a global network of visionaries engineering a better tomorrow for everyone, everywhere.</p>
+<button class="btn-gradient px-12 py-5 rounded-full text-white font-label-caps text-label-caps text-xl tracking-widest relative z-10 hover:scale-105 transition-transform">
+                    DONATE NOW
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[32px] bg-surface-container-lowest border-t border-white/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="max-w-xs">
+<h2 class="font-headline-md text-on-surface mb-4">VIDIYAL</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">Engineering Social Good with Precision. A new era of humanitarian action starts here.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary" data-icon="alternate_email">alternate_email</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary" data-icon="share">share</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">PLATFORM</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Programs</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Transparency</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Impact Ledger</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">RESOURCES</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Annual Reports</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Case Studies</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Partners</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 VIDIYAL. Engineering Social Good with Precision.</p>
+<p class="font-label-caps text-label-caps text-primary">MADE FOR GLOBAL IMPACT</p>
+</div>
+</footer>
+<!-- Mobile Navigation Drawer (Hidden by default, for structure reference) -->
+<div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-80 rounded-r-3xl bg-surface-container-lowest/95 backdrop-blur-2xl border-r border-white/5 shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full" id="nav-drawer">
+<div class="p-8 flex items-center gap-4 border-b border-white/5">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-bold text-primary">GoodWave Member</p>
+<p class="text-xs text-on-surface-variant">Impact Level: Visionary</p>
+</div>
+</div>
+<nav class="flex-1 py-8">
+<a class="bg-primary-container/20 text-primary border-l-4 border-primary px-6 py-4 flex items-center gap-4 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span> Programs
+            </a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span> Impact
+            </a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span> Transparency
+            </a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+            </a>
+</nav>
+<div class="p-8 text-xs text-on-surface-variant border-t border-white/5">
+            Joined 2024
+        </div>
+</div>
+</body></html>

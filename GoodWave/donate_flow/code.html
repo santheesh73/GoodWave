@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIDIYAL | Precision Social Impact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#e0d2ff",
+                        "secondary": "#cdc0e9",
+                        "surface-dim": "#141218",
+                        "surface-variant": "#36343a",
+                        "on-tertiary": "#3e2e00",
+                        "tertiary-fixed": "#ffdf93",
+                        "inverse-on-surface": "#322f35",
+                        "on-tertiary-container": "#503d00",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary": "#381e72",
+                        "secondary-fixed": "#e9ddff",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "on-secondary-fixed": "#1f1635",
+                        "tertiary": "#e7c365",
+                        "outline-variant": "#494551",
+                        "on-surface-variant": "#cbc4d2",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-surface": "#e6e0e9",
+                        "tertiary-container": "#c9a74d",
+                        "on-secondary-container": "#bfb2da",
+                        "background": "#141218",
+                        "error-container": "#93000a",
+                        "surface": "#141218",
+                        "primary": "#cfbcff",
+                        "surface-tint": "#cfbcff",
+                        "surface-container-highest": "#36343a",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#22005d",
+                        "on-background": "#e6e0e9",
+                        "secondary-container": "#4d4465",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-secondary": "#342b4b",
+                        "inverse-primary": "#6750a4",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "primary-container": "#6750a4",
+                        "surface-container-high": "#2b292f",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e9ddff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e6e0e9",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "surface-container-low": "#1d1b20",
+                        "surface-container-lowest": "#0f0d13",
+                        "surface-bright": "#3b383e",
+                        "outline": "#948e9c",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "surface-container": "#211f24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display-xl": ["Geist"],
+                        "label-caps": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(207, 188, 255, 0.2);
+        }
+        .progress-glow {
+            box-shadow: 0 0 10px rgba(207, 188, 255, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #cfbcff 0%, #cdc0e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 dark:bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-white/5 transition-all duration-300 p-2 rounded-full active:scale-95 duration-200">menu</button>
+<h1 class="font-display-xl text-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim">VIDIYAL</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary py-2" href="#">DONATE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors py-2" href="#">PROGRAMS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors py-2" href="#">IMPACT</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-opacity-90 transition-all active:scale-95 duration-200 neon-glow">DONATE</button>
+</div>
+</header>
+<main class="pt-32 pb-stack-lg px-margin-mobile">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Centered Glassmorphism Panel (Form Area) -->
+<div class="lg:col-start-2 lg:col-span-7 flex flex-col gap-stack-md">
+<!-- Progress Indicator -->
+<div class="glass-card rounded-2xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-primary">TRANSACTION STEP 1/3</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">FUNDING ALLOCATION</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-gradient-to-r from-primary to-secondary rounded-full relative progress-glow">
+<div class="absolute right-0 top-0 h-full w-2 bg-white blur-[2px]"></div>
+</div>
+</div>
+</div>
+<!-- Step 1: Amount Selection -->
+<div class="glass-card rounded-3xl p-margin-desktop flex flex-col gap-stack-md relative overflow-hidden">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Choose Amount</h2>
+<p class="text-on-surface-variant font-body-md">Precision-targeted funding for maximum scalability.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<button class="glass-card rounded-xl p-6 text-center hover:border-primary transition-all group active:scale-95">
+<span class="block font-headline-md text-on-surface group-hover:text-primary">₹250</span>
+<span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: Entry Level</span>
+</button>
+<button class="glass-card rounded-xl p-6 text-center border-primary bg-primary/10 transition-all group active:scale-95 ring-1 ring-primary/50">
+<span class="block font-headline-md text-primary">₹500</span>
+<span class="text-xs text-primary/70">Most Popular</span>
+</button>
+<button class="glass-card rounded-xl p-6 text-center hover:border-primary transition-all group active:scale-95">
+<span class="block font-headline-md text-on-surface group-hover:text-primary">₹1000</span>
+<span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: Strategic</span>
+</button>
+<button class="glass-card rounded-xl p-6 text-center hover:border-primary transition-all group active:scale-95">
+<span class="block font-headline-md text-on-surface group-hover:text-primary">₹2500</span>
+<span class="text-xs text-on-surface-variant group-hover:text-primary/70">Impact: High Velocity</span>
+</button>
+<button class="lg:col-span-2 glass-card rounded-xl p-6 flex flex-col justify-center items-center gap-2 hover:border-primary transition-all group active:scale-95">
+<input class="bg-transparent border-none text-center font-headline-md text-on-surface placeholder:text-on-surface-variant focus:ring-0 w-full" placeholder="Enter Custom Amount" type="text"/>
+<div class="h-[1px] w-1/2 bg-surface-variant group-focus-within:bg-primary transition-all"></div>
+</button>
+</div>
+<div class="pt-stack-md border-t border-white/5 flex flex-col gap-4">
+<div class="flex items-center gap-4 bg-primary/5 p-4 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+<p class="font-body-md text-primary">₹500 = 10 high-nutrition meals for rural students in primary schools.</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-headline-md text-headline-md tracking-tight neon-glow hover:bg-opacity-90 active:scale-[0.98] transition-all">
+                        CONTINUE TO PROGRAMS
+                    </button>
+</div>
+</div>
+<!-- Summary Sidebar (Impact Preview) -->
+<aside class="lg:col-span-4 sticky top-32 flex flex-col gap-6">
+<div class="glass-card rounded-3xl p-6 flex flex-col gap-6">
+<h3 class="font-headline-md text-[20px] text-on-surface">Live Impact Summary</h3>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="text-on-surface-variant">Selected Amount</span>
+<span class="text-primary font-bold">₹500.00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-white/5">
+<span class="text-on-surface-variant">Mission Focus</span>
+<span class="text-on-surface">Unassigned</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-on-surface-variant">Tax Benefits</span>
+<span class="text-tertiary">80G Eligible</span>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-video relative">
+<img alt="Social Impact" class="w-full h-full object-cover opacity-60" data-alt="A cinematic, low-angle shot of a vibrant community garden in a futuristic urban setting, with lush green plants thriving under soft, glowing artificial lights. The atmosphere is serene and hopeful, with deep purples and electric cyans creating a high-tech humanitarian aesthetic. Soft focus on a child smiling while tending to a plant, symbolizing growth and precision-managed social impact." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoHqKtoVd90FhzkA4pQDz6NBzlnqaBj7wI_-mJlpGT7U4weBnkY2qQQ3kBZw49ZOBXQKa1KqXE71-l5AFaGbhguMWW9W6kISpPUX2JQmegu8XcFzJ1jsxPFxUWQ61EfpthY6LVkI6gi1G_mXYHb-c_ywNXRyU_zntUzqdpkXPRfuIlcN_4G3LDwyWVzjUSAuJYXBQVygsAI2n46NwJMCcW9WShqEqay26c5mdgOAmI6puW9G5nAAZLntf-QsKKsv9UbvdvBE5hhXI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-[10px] font-label-caps text-on-surface tracking-widest uppercase">Project Site: TN-04</span>
+</div>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant text-center leading-relaxed">
+                        Your contribution is processed via a 256-bit encrypted gateway. Every rupee is trackable through our Transparency Dashboard.
+                    </p>
+</div>
+<div class="glass-card rounded-2xl p-4 flex items-center gap-4 border-primary/20">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Precision Security</p>
+<p class="text-xs text-on-surface-variant">PCI-DSS Compliant Infrastructure</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Hidden Success Screen Content Placeholder (Conceptual Structure) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 backdrop-blur-2xl bg-background/80" id="success-state">
+<div class="glass-card max-w-xl w-full rounded-[40px] p-12 flex flex-col items-center text-center gap-6">
+<div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center border border-primary/30 neon-glow">
+<span class="material-symbols-outlined text-[48px] text-primary" data-weight="fill">check_circle</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="font-display-xl text-headline-md tracking-tighter text-primary">THANK YOU!</h2>
+<p class="font-headline-md text-[20px] text-on-surface">Your donation creates measurable impact.</p>
+</div>
+<p class="text-on-surface-variant">The VIDIYAL algorithm has successfully allocated your contribution to the Rural Education Program. A detailed impact report will be dispatched to your email.</p>
+<button class="px-8 py-3 bg-surface-container-highest text-primary rounded-full font-label-caps border border-primary/20 hover:bg-surface-variant transition-all">VIEW LIVE DASHBOARD</button>
+</div>
+</div>
+<!-- Footer from JSON -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full rounded-t-[32px] border-t border-white/10 flat no shadows">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<h2 class="font-headline-md text-on-surface">VIDIYAL</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 VIDIYAL. Engineering Social Good with Precision.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Programs</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Transparency</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

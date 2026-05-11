@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(20, 18, 24, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(207, 188, 255, 0.3);
+            box-shadow: 0 0 20px rgba(207, 188, 255, 0.1);
+        }
+        .btn-gradient {
+            background: linear-gradient(90deg, #cfbcff 0%, #6750a4 100%);
+            box-shadow: 0 0 15px rgba(207, 188, 255, 0.3);
+        }
+        .inner-glow {
+            box-shadow: inset 0 0 10px rgba(207, 188, 255, 0.1);
+        }
+        .progress-glow {
+            box-shadow: 0 0 8px #cfbcff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#e0d2ff",
+                      "secondary": "#cdc0e9",
+                      "surface-dim": "#141218",
+                      "surface-variant": "#36343a",
+                      "on-tertiary": "#3e2e00",
+                      "tertiary-fixed": "#ffdf93",
+                      "inverse-on-surface": "#322f35",
+                      "on-tertiary-container": "#503d00",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-primary": "#381e72",
+                      "secondary-fixed": "#e9ddff",
+                      "secondary-fixed-dim": "#cdc0e9",
+                      "on-secondary-fixed": "#1f1635",
+                      "tertiary": "#e7c365",
+                      "outline-variant": "#494551",
+                      "on-surface-variant": "#cbc4d2",
+                      "primary-fixed-dim": "#cfbcff",
+                      "on-surface": "#e6e0e9",
+                      "tertiary-container": "#c9a74d",
+                      "on-secondary-container": "#bfb2da",
+                      "background": "#141218",
+                      "error-container": "#93000a",
+                      "surface": "#141218",
+                      "primary": "#cfbcff",
+                      "surface-tint": "#cfbcff",
+                      "surface-container-highest": "#36343a",
+                      "on-error": "#690005",
+                      "on-primary-fixed": "#22005d",
+                      "on-background": "#e6e0e9",
+                      "secondary-container": "#4d4465",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "on-secondary": "#342b4b",
+                      "inverse-primary": "#6750a4",
+                      "tertiary-fixed-dim": "#e7c365",
+                      "primary-container": "#6750a4",
+                      "surface-container-high": "#2b292f",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#e9ddff",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e6e0e9",
+                      "on-secondary-fixed-variant": "#4b4263",
+                      "surface-container-low": "#1d1b20",
+                      "surface-container-lowest": "#0f0d13",
+                      "surface-bright": "#3b383e",
+                      "outline": "#948e9c",
+                      "on-primary-fixed-variant": "#4f378a",
+                      "surface-container": "#211f24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-lg": "48px",
+                      "stack-md": "24px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "unit": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Geist"],
+                      "body-md": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "headline-lg-mobile": ["Geist"],
+                      "display-xl": ["Geist"],
+                      "label-caps": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(207,188,255,0.15)]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-display-xl text-headline-md tracking-tighter text-primary">VIDIYAL</h1>
+</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-primary font-bold border-b-2 border-primary py-2" href="#">Programs</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Impact</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Transparency</a>
+</nav>
+<button class="btn-gradient px-6 py-2 rounded-full font-label-caps text-on-primary font-bold active:scale-95 duration-200">
+                DONATE
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<section class="mb-stack-lg space-y-stack-md text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Explore Our Mission</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Precision-engineered humanitarian initiatives leveraging technology to accelerate global social equity.</p>
+<div class="flex flex-col md:flex-row gap-4 pt-4">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl py-4 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search programs..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps">All</button>
+<button class="glass-card text-on-surface-variant hover:text-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps transition-all">Education</button>
+<button class="glass-card text-on-surface-variant hover:text-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps transition-all">Healthcare</button>
+<button class="glass-card text-on-surface-variant hover:text-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps transition-all">Clean Water</button>
+<button class="glass-card text-on-surface-variant hover:text-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps transition-all">Empowerment</button>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-75" data-alt="A cinematic, wide-angle shot of a futuristic classroom setting where children in a rural village are interacting with glowing, high-tech holographic educational interfaces. The scene is bathed in a cool blue and purple light, creating a high-contrast mission-control aesthetic. The mood is hopeful, innovative, and technologically advanced, echoing a sophisticated digital laboratory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt72sEKZKrj4K2TH-jjHnsXET9_iC8tTBYzr6QonKXPR126PQfzTAXIA9STvsApmP3luORf2xAknMm-jmPRFHbw0aw7wKb_Ar6cYYTv-ghrKaUw2YWiSw5Eh9Ven1qrPHtUnEPJIzi8c4Y7T56fYfbVgMj6IKA1aKS5hUD3sbdvgaKse2OXELq84ouD-u_yRMC3R-2ikxCdZXhuOca5b0VKC-lL5z8YyHSZ5gOdsuC_mlu_gC3B_rP_RW6z3OxbVtew2y88ufQwIE"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur-md text-on-primary-container px-3 py-1 rounded-full text-xs font-bold font-label-caps">URGENT</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Education</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            South Asia • Remote Nodes
+                        </div>
+<h3 class="font-headline-md text-on-surface">Rural Education Initiative</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Deploying satellite-linked digital learning hubs to bridge the educational divide in ultra-remote agricultural clusters.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant">
+<span>Target: $1.2M</span>
+<span class="text-primary">82% COMPLETE</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full btn-gradient w-[82%] progress-glow"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<span class="font-label-caps">14,200 IMPACTED</span>
+</div>
+<div class="flex gap-4">
+<button class="text-primary font-label-caps hover:underline transition-all">Details</button>
+<button class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</button>
+</div>
+</div>
+</div>
+</article>
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-75" data-alt="A sophisticated, high-tech mobile clinic unit parked in a rugged, mountainous terrain at dusk. The interior of the clinic emits a sharp, neon cyan glow, illuminating medical professionals in clean, futuristic uniforms using advanced diagnostic screens. The lighting is cinematic and high-contrast, with long shadows and a deep palette of midnight blues and vibrant neons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1AqaLjZ_uQEUNfQJc6ciiSGN3mFHLZ8gNUWA4dZ0CZEziDHwX3tuBUFg71ffLrryo7DkvCicn3mNuyX_xZcC8ZZpgb0hwe4MRETC2bv52mo1uE9lj5drizh9zJgn1U-3gIVCqPic8kbUlL5pdZnpOf2B4V3dSKgS1JjryrG2aL_qj6P9MTgBDA5RFOTTIvtvWeGJQm95uRzhDJ-vC_B0KAqG-Aa2sxGO0CYo11gVGapYe9LxBBcSD5oguR7kkJE3kKpXsQr1DUe0"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Healthcare</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Sub-Saharan Africa
+                        </div>
+<h3 class="font-headline-md text-on-surface">Mobile Health Clinics</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Mobile diagnostic units equipped with AI-assisted triage capabilities for high-frequency medical outreach in crisis zones.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant">
+<span>Target: $850k</span>
+<span class="text-primary">45% COMPLETE</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full btn-gradient w-[45%] progress-glow"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<span class="font-label-caps">8,400 IMPACTED</span>
+</div>
+<div class="flex gap-4">
+<button class="text-primary font-label-caps hover:underline transition-all">Details</button>
+<button class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</button>
+</div>
+</div>
+</div>
+</article>
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-75" data-alt="A striking image of a modern, solar-powered water filtration tower standing as a beacon in a dry, arid desert landscape. The tower's sleek, metallic surfaces reflect a brilliant, neon-infused sunset. The water flowing from the pipes is crystal clear and glowing with an ethereal cyan light, symbolizing purity and technological precision in a harsh environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwub2-U3L8WU8l2hHHLrbdMkY1ttFhGU_0Ula4tWNSkkQNX6X6LAQRb04qw_sByR9eMSv3-EZ52Qqc2S6dOVcxfLuuHmC1TpJluawvOjYbaDXUHW_LzZaQpPUVPcQ1xZXKFGTKCUqYcXvNUtX4glHYR_la64fU4C0hJ4DBpa3LmtzPdT7JKOCB-7HLz5v-EirTW3mptdTgbssPd_QdT86cYK8PcZ_FN6YDhxx7GMTBEY38Zz2csKpkQRnCeVB_OEpcep9hqNZXSqQ"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur-md text-on-primary-container px-3 py-1 rounded-full text-xs font-bold font-label-caps">URGENT</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Clean Water</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Horn of Africa
+                        </div>
+<h3 class="font-headline-md text-on-surface">Clean Water for All</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Installation of smart solar-powered atmospheric water generators in regions suffering from extreme groundwater depletion.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant">
+<span>Target: $2.1M</span>
+<span class="text-primary">60% COMPLETE</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full btn-gradient w-[60%] progress-glow"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<span class="font-label-caps">32,000 IMPACTED</span>
+</div>
+<div class="flex gap-4">
+<button class="text-primary font-label-caps hover:underline transition-all">Details</button>
+<button class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</button>
+</div>
+</div>
+</div>
+</article>
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-75" data-alt="A group of determined women in a bright, minimalist industrial workshop, working with high-tech computerized textile machines. The room is designed with clean lines and high-contrast lighting, where vibrant neon threads glow against a deep, dark background. The atmosphere is one of empowerment and precision, showcasing the intersection of traditional skill and modern technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5_pWIismDZLqnirzSfTpLRm6-_aCJB05a6mwMWrXiXwogUeuDH0XsCKn9UGBuFnmf0m4WMiAFwF3OYOLnfvlYHnr7PAMv_0fQqjIs4qZFzYuHfbtIKvxYG53FaKrjZ0LkaM2d_gi8-kKjErYp_YcsWvvfGOhEaj3G9QnEEGv10wzv1VBGqUwXyyfGkD8WfyTHsPDVSk6XiS6vj3xTkCwgPO_k82uxVwA_uhiyVzpJbm3JWhhkDvRKPBlHnE7eMn4dPQSzuQrzYpg"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Women Empowerment</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Global Empowerment Hubs
+                        </div>
+<h3 class="font-headline-md text-on-surface">Women Skill Development</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Micro-entrepreneurship accelerators providing high-tech vocational training and zero-interest initial venture capital.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant">
+<span>Target: $500k</span>
+<span class="text-primary">91% COMPLETE</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full btn-gradient w-[91%] progress-glow"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<span class="font-label-caps">2,100 IMPACTED</span>
+</div>
+<div class="flex gap-4">
+<button class="text-primary font-label-caps hover:underline transition-all">Details</button>
+<button class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<section class="mt-stack-lg flex flex-col items-center text-center space-y-4 py-stack-lg border-2 border-dashed border-white/5 rounded-3xl opacity-50 hidden">
+<span class="material-symbols-outlined text-6xl text-on-surface-variant" data-icon="inventory_2">inventory_2</span>
+<h4 class="font-headline-md text-on-surface">No matching missions found</h4>
+<p class="text-on-surface-variant max-w-sm">Our current mission list doesn't match your search criteria. Try broadening your parameters.</p>
+<button class="text-primary font-label-caps font-bold">Reset Filters</button>
+</section>
+</main>
+<footer class="bg-surface-container-lowest w-full rounded-t-[32px] border-t border-white/10 mt-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="space-y-4 text-center md:text-left">
+<h3 class="font-headline-md text-on-surface">VIDIYAL</h3>
+<p class="font-label-caps text-on-surface-variant">© 2024 VIDIYAL. Engineering Social Good with Precision.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Programs</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Transparency</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

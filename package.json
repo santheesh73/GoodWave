@@ -1,0 +1,12 @@
+{
+  "name": "goodwave-frontend",
+  "version": "1.0.0",
+  "description": "GoodWave Humanitarian Impact System",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y browser-sync start --server --files '*.html, *.css, *.js' --port 3000 --no-notify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

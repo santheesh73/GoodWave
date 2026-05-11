@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#e0d2ff",
+                    "secondary": "#cdc0e9",
+                    "surface-dim": "#141218",
+                    "surface-variant": "#36343a",
+                    "on-tertiary": "#3e2e00",
+                    "tertiary-fixed": "#ffdf93",
+                    "inverse-on-surface": "#322f35",
+                    "on-tertiary-container": "#503d00",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary": "#381e72",
+                    "secondary-fixed": "#e9ddff",
+                    "secondary-fixed-dim": "#cdc0e9",
+                    "on-secondary-fixed": "#1f1635",
+                    "tertiary": "#e7c365",
+                    "outline-variant": "#494551",
+                    "on-surface-variant": "#cbc4d2",
+                    "primary-fixed-dim": "#cfbcff",
+                    "on-surface": "#e6e0e9",
+                    "tertiary-container": "#c9a74d",
+                    "on-secondary-container": "#bfb2da",
+                    "background": "#141218",
+                    "error-container": "#93000a",
+                    "surface": "#141218",
+                    "primary": "#cfbcff",
+                    "surface-tint": "#cfbcff",
+                    "surface-container-highest": "#36343a",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#22005d",
+                    "on-background": "#e6e0e9",
+                    "secondary-container": "#4d4465",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-secondary": "#342b4b",
+                    "inverse-primary": "#6750a4",
+                    "tertiary-fixed-dim": "#e7c365",
+                    "primary-container": "#6750a4",
+                    "surface-container-high": "#2b292f",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#e9ddff",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e6e0e9",
+                    "on-secondary-fixed-variant": "#4b4263",
+                    "surface-container-low": "#1d1b20",
+                    "surface-container-lowest": "#0f0d13",
+                    "surface-bright": "#3b383e",
+                    "outline": "#948e9c",
+                    "on-primary-fixed-variant": "#4f378a",
+                    "surface-container": "#211f24"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Geist"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display-xl": ["Geist"],
+                    "label-caps": ["Geist"]
+            },
+            "fontSize": {
+                    "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(20, 18, 24, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(207, 188, 255, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #cfbcff 0%, #cdc0e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #6750a4 0%, #381e72 100%);
+        }
+        .progress-glow {
+            box-shadow: 0 0 10px #cfbcff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 dark:bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+<span class="font-display-xl text-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim">VIDIYAL</span>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-primary font-bold border-b-2 border-primary py-2" href="#">Programs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Impact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Transparency</a>
+</div>
+<button class="gradient-button text-on-primary px-6 py-2 rounded-full font-label-caps transition-transform active:scale-95 duration-200">
+                DONATE
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[618px] flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Rural Education" class="w-full h-full object-cover opacity-60" data-alt="A wide panoramic shot of a rustic rural classroom in South Asia during the golden hour. Sunbeams filter through wooden window slats, illuminating young students focused on their tablets. The style is cinematic with deep shadows and high-contrast neon highlights of purple and cyan. The mood is hopeful, innovative, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9aMF294IF9Ky3st6d5CDcnSlcP2iwZRMbYgXIBAsbxUQzce_an3XbVBDuNnVCP3D9MKq9ZgLMc5Kn8e8ZQ-40bpyyDG0sMyxH0CAYbtzEC8h2HEK8aKVxepo47GeEQyWWMGkQ__7jLG36Pggu0I6d7-E09NCZJbofChl3SLcjsrDeN-oUi9u3HPxjld2G4fzt4qooQ5KHk6vMtdhgmhN5dvYGayzddzqrvQWJenKZ9F4nmy7tnqslgF8iTYIeuHyxklh5L3uCKVQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-stack-lg w-full">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="bg-primary/20 border border-primary/40 text-primary px-3 py-1 rounded-full text-label-caps">EDUCATION</span>
+<span class="bg-secondary/20 border border-secondary/40 text-secondary px-3 py-1 rounded-full text-label-caps">RURAL TAMIL NADU</span>
+</div>
+<h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl leading-tight text-on-surface">Digital Bridges: The Vidiyal Initiative</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">Bridging the rural-urban education gap through high-speed satellite connectivity and modern digital infrastructure for remote villages.</p>
+</div>
+</div>
+</section>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Main Content Column -->
+<div class="lg:col-span-2 flex flex-col gap-stack-lg">
+<!-- Problem & Solution Cards (Bento style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-card p-stack-md rounded-xl flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-error-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md">The Problem</h3>
+<p class="text-on-surface-variant">Over 65% of rural primary schools lack stable internet access, leaving millions of students isolated from the global digital economy and modern learning resources.</p>
+</div>
+<div class="glass-card p-stack-md rounded-xl flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+</div>
+<h3 class="font-headline-md text-headline-md">The Solution</h3>
+<p class="text-on-surface-variant">We deploy ruggedized solar-powered satellite hubs and provide 1:1 tablet-based learning programs integrated with high-quality vernacular content.</p>
+</div>
+</div>
+<!-- Impact Metrics -->
+<div class="glass-card p-stack-md rounded-xl grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="flex flex-col gap-1">
+<span class="text-primary font-display-xl text-headline-lg">12</span>
+<span class="text-label-caps text-on-surface-variant uppercase">Villages Connected</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-display-xl text-headline-lg">2.4k</span>
+<span class="text-label-caps text-on-surface-variant uppercase">Active Students</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-display-xl text-headline-lg">94%</span>
+<span class="text-label-caps text-on-surface-variant uppercase">Success Rate</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-display-xl text-headline-lg">150</span>
+<span class="text-label-caps text-on-surface-variant uppercase">Trained Mentors</span>
+</div>
+</div>
+<!-- Transparency Breakdown -->
+<div class="glass-card p-stack-md rounded-xl flex flex-col gap-stack-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md">Transparency Protocol</h3>
+<span class="text-label-caps text-primary border-b border-primary">LIVE LEDGER</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="relative h-4 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 50%"></div>
+<div class="h-full bg-secondary" style="width: 20%"></div>
+<div class="h-full bg-tertiary" style="width: 20%"></div>
+<div class="h-full bg-outline-variant" style="width: 10%"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-body-md text-on-surface">50% Direct Support (Infrastructure)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="text-body-md text-on-surface">20% Educator Training</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="text-body-md text-on-surface">20% Regional Logistics</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<span class="text-body-md text-on-surface">10% Mission Administration</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Column -->
+<aside class="flex flex-col gap-gutter">
+<!-- Progress Card -->
+<div class="glass-card p-stack-md rounded-xl flex flex-col gap-6 border-primary/20 sticky top-24">
+<div class="flex flex-col gap-1">
+<span class="text-label-caps text-primary uppercase">Funding Status</span>
+<div class="flex justify-between items-baseline">
+<span class="font-display-xl text-headline-md text-on-surface">$42,500</span>
+<span class="text-on-surface-variant">of $85k Goal</span>
+</div>
+</div>
+<div class="relative h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary progress-glow w-[50%]"></div>
+</div>
+<div class="flex justify-between text-label-caps">
+<span class="text-on-surface-variant">50% REACHED</span>
+<span class="text-on-surface-variant">12 DAYS LEFT</span>
+</div>
+<div class="flex flex-col gap-3">
+<button class="gradient-button text-on-primary py-4 rounded-xl font-headline-md transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-primary/10">
+                                Donate to this Program
+                            </button>
+<button class="border border-outline-variant text-on-surface py-4 rounded-xl font-label-caps hover:bg-white/5 transition-colors">
+                                SET MONTHLY PLEDGE
+                            </button>
+</div>
+<!-- Share Section -->
+<div class="pt-4 border-t border-white/10">
+<span class="text-label-caps text-on-surface-variant block mb-4">AMPLIFY THIS MISSION</span>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="link">link</span>
+</button>
+<button class="flex-1 rounded-xl border border-outline-variant px-4 py-2 text-label-caps flex items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite" data-weight="fill">favorite</span>
+                                    Follow Updates
+                                </button>
+</div>
+</div>
+</div>
+<!-- Related Programs -->
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md px-2">Related Programs</h4>
+<div class="flex flex-col gap-4">
+<div class="glass-card p-4 rounded-xl flex gap-4 cursor-pointer hover:bg-white/5 transition-all group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Telemedicine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A focused close-up of a doctor's hand holding a high-tech medical tablet showing health data in a rural clinic. The background is softly blurred, showing clinical equipment with cyan neon lighting indicators. The overall mood is professional, sterile, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF8zxGk4GkscENbxMngJh1ZDyJPK3-mDrH8PfWCOL6xmWGCMmzuM0lAevotm2QMM6TN8qqcmpmbZkWs2vOaJ_2awoXo-29r9-bveajS9XtsAyL8iJDyYsVM1aJSbx3SWyOLOzXWCvrwuksRvFzOvSvnyR7EpV3FJawqLczTtTyU5n6_WHuEu4aaEmHHp_y1O009SA0zDT1qiIpPvOKeV0IhZLte49Z8NouxYnOofEOeL1V-KegPSiBkeBAsTDfj40MwZ7b90irHzc"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-label-caps text-primary">HEALTHCARE</span>
+<h5 class="text-on-surface font-headline-md text-body-md leading-snug">Remote Health Hubs</h5>
+</div>
+</div>
+<div class="glass-card p-4 rounded-xl flex gap-4 cursor-pointer hover:bg-white/5 transition-all group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="AgTech" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated vertical farm in a desert region using neon-lit hydroponics. Thousands of vibrant green lettuce leaves grow under purple and cyan LED lights. The scene is futuristic and ultra-clean, depicting high-yield agriculture in extreme conditions. Cinematic lighting creates a sense of scientific innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgTplutAngImkAZv3KhwdGXmEgFFopwtNPqIDguXgU12mYcrRAhKrBjsZFeYXaFWb7TPCllkYgx0oPfeVe8kbigTUu74Ni_ValDBtlHLTEs2xdqD9noG_gv9_Dg50htEBbmgt7HucmKYeWr9oKG-j4uUUW0T8aGKuF4pajdNu-KoiNIdHvyE2hpcm1k9GSmSAcd3Z2-N5ifZ3oxTRHaxpD0PyWIgArM6sbkqD02kQjinhrH9B8gtPHgqctNbb-9-sE7vtwQVs_qhU"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-label-caps text-tertiary">AG-TECH</span>
+<h5 class="text-on-surface font-headline-md text-body-md leading-snug">Precision Soil Sensing</h5>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Mobile only) -->
+<div class="md:hidden">
+<!-- Drawer logic would be here - showing structural representation -->
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/10 mt-stack-lg rounded-t-[32px]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+<span class="font-headline-md text-on-surface">VIDIYAL</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant max-w-sm">© 2024 VIDIYAL. Engineering Social Good with Precision.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-primary underline font-label-caps text-label-caps" href="#">Programs</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Transparency</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Privacy Policy</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="language">language</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="security">security</span>
+</div>
+</div>
+</footer>
+</body></html>

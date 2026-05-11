@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoodWave | Explore Programs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="tailwind.config.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+<div class="flex justify-between items-center px-4 md:px-12 h-20 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" id="menu-toggle">menu</span>
+<a href="index.html" class="font-display-xl text-headline-md tracking-tighter text-primary">GoodWave</a>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="index.html">HOME</a>
+<a class="nav-link-active font-label-caps text-label-caps" href="programs.html">PROGRAMS</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="impact.html">IMPACT</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="program-detail.html">TRANSPARENCY</a>
+</nav>
+<a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-all duration-300">DONATE</a>
+</div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-80 rounded-r-3xl bg-surface-container-lowest/95 backdrop-blur-2xl border-r border-white/5 shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full" id="nav-drawer">
+<div class="p-8 flex items-center justify-between border-b border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined">person</span></div>
+<div><p class="font-bold text-primary">GoodWave Member</p><p class="text-xs text-on-surface-variant">Impact Level: Visionary</p></div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" id="drawer-close">close</span>
+</div>
+<nav class="flex-1 py-8">
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="index.html"><span class="material-symbols-outlined">home</span> Home</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="programs.html"><span class="material-symbols-outlined">folder_special</span> Programs</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="impact.html"><span class="material-symbols-outlined">query_stats</span> Impact</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="program-detail.html"><span class="material-symbols-outlined">account_balance</span> Transparency</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="donate.html"><span class="material-symbols-outlined">volunteer_activism</span> Donate</a>
+</nav>
+</div>
+<div class="fixed inset-0 bg-black/50 z-[55] hidden" id="drawer-overlay"></div>
+
+<main class="pt-32 pb-12 max-w-[1280px] mx-auto px-4 md:px-12">
+<section class="mb-12 space-y-6 text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Explore Our Mission</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Precision-engineered humanitarian initiatives leveraging technology to accelerate global social equity.</p>
+<div class="flex flex-col md:flex-row gap-4 pt-4">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl py-4 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-on-surface" placeholder="Search programs..." type="text" id="search-input"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps filter-btn active" data-filter="all">All</button>
+<button class="glass-card text-on-surface-variant hover:text-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps transition-all filter-btn" data-filter="education">Education</button>
+<button class="glass-card text-on-surface-variant hover:text-primary px-6 py-2 rounded-full whitespace-nowrap font-label-caps transition-all filter-btn" data-filter="healthcare">Healthcare</button>
+</div>
+</div>
+</section>
+
+<!-- Emotional Quote -->
+<section class="mb-10">
+<div class="glass-card rounded-3xl p-8 md:p-10 text-center relative overflow-hidden">
+<div class="absolute -top-16 -left-16 w-48 h-48 bg-primary/5 blur-[80px] rounded-full"></div>
+<span class="material-symbols-outlined text-primary/30 text-4xl mb-3 block">volunteer_activism</span>
+<p class="font-body-lg text-body-lg text-on-surface italic leading-relaxed max-w-2xl mx-auto">"When you support a program, you don't just fund a project — <span class="text-primary font-bold not-italic">you write the next chapter of someone's life story.</span>"</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-4 tracking-widest">— EVERY CONTRIBUTION COUNTS</p>
+</div>
+</section>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="programs-grid">
+<!-- Card 1: Rural Education -->
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col program-card" data-category="education">
+<div class="media-motion-frame h-64 relative overflow-hidden">
+<img class="media-motion-image grayscale-[20%] brightness-75" src="images/rural_education.png" alt="Education"/>
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur-md text-on-primary-container px-3 py-1 rounded-full text-xs font-bold font-label-caps">URGENT</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Education</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps"><span class="material-symbols-outlined text-sm">location_on</span> South Asia • Remote Nodes</div>
+<h3 class="font-headline-md text-on-surface">Rural Education Initiative</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Deploying satellite-linked digital learning hubs to bridge the educational divide in ultra-remote agricultural clusters.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant"><span>Target: ₹1.2M</span><span class="text-primary">82% COMPLETE</span></div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full btn-gradient w-[82%] progress-glow"></div></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">groups</span><span class="font-label-caps">14,200 IMPACTED</span></div>
+<div class="flex gap-4">
+<a href="program-detail.html" class="text-primary font-label-caps hover:underline transition-all">Details</a>
+<a href="donate.html" class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</a>
+</div>
+</div>
+</div>
+</article>
+
+<!-- Card 2: Mobile Health -->
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col program-card" data-category="healthcare">
+<div class="media-motion-frame h-64 relative overflow-hidden">
+<img class="media-motion-image grayscale-[20%] brightness-75" src="images/healthcare_clinic.png" alt="Healthcare"/>
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Healthcare</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps"><span class="material-symbols-outlined text-sm">location_on</span> Sub-Saharan Africa</div>
+<h3 class="font-headline-md text-on-surface">Mobile Health Clinics</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Mobile diagnostic units equipped with AI-assisted triage capabilities for high-frequency medical outreach in crisis zones.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant"><span>Target: ₹850k</span><span class="text-primary">45% COMPLETE</span></div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full btn-gradient w-[45%] progress-glow"></div></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">groups</span><span class="font-label-caps">8,400 IMPACTED</span></div>
+<div class="flex gap-4">
+<a href="program-detail.html" class="text-primary font-label-caps hover:underline">Details</a>
+<a href="donate.html" class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</a>
+</div>
+</div>
+</div>
+</article>
+
+<!-- Card 3: Clean Water -->
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col program-card" data-category="water">
+<div class="media-motion-frame h-64 relative overflow-hidden">
+<img class="media-motion-image grayscale-[20%] brightness-75" src="images/clean_water.png" alt="Clean Water"/>
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-primary-container/80 backdrop-blur-md text-on-primary-container px-3 py-1 rounded-full text-xs font-bold font-label-caps">URGENT</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Clean Water</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps"><span class="material-symbols-outlined text-sm">location_on</span> Horn of Africa</div>
+<h3 class="font-headline-md text-on-surface">Clean Water for All</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Installation of smart solar-powered atmospheric water generators in regions suffering from extreme groundwater depletion.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant"><span>Target: ₹2.1M</span><span class="text-primary">60% COMPLETE</span></div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full btn-gradient w-[60%] progress-glow"></div></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">groups</span><span class="font-label-caps">32,000 IMPACTED</span></div>
+<div class="flex gap-4">
+<a href="program-detail.html" class="text-primary font-label-caps hover:underline">Details</a>
+<a href="donate.html" class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</a>
+</div>
+</div>
+</div>
+</article>
+
+<!-- Card 4: Women Empowerment -->
+<article class="glass-card rounded-3xl overflow-hidden flex flex-col program-card" data-category="empowerment">
+<div class="media-motion-frame h-64 relative overflow-hidden">
+<img class="media-motion-image grayscale-[20%] brightness-75" src="images/women_empowerment.png" alt="Empowerment"/>
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-xs font-label-caps uppercase">Women Empowerment</span>
+</div>
+</div>
+<div class="p-8 space-y-6 flex-grow flex flex-col">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary font-label-caps"><span class="material-symbols-outlined text-sm">location_on</span> Global Empowerment Hubs</div>
+<h3 class="font-headline-md text-on-surface">Women Skill Development</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Micro-entrepreneurship accelerators providing high-tech vocational training and zero-interest initial venture capital.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-caps text-on-surface-variant"><span>Target: ₹500k</span><span class="text-primary">91% COMPLETE</span></div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full btn-gradient w-[91%] progress-glow"></div></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant border-t border-white/5 pt-6 mt-auto">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">groups</span><span class="font-label-caps">2,100 IMPACTED</span></div>
+<div class="flex gap-4">
+<a href="program-detail.html" class="text-primary font-label-caps hover:underline">Details</a>
+<a href="donate.html" class="btn-gradient text-on-primary px-6 py-2 rounded-full font-label-caps font-bold">Donate</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+
+<!-- Emotional CTA Before Footer -->
+<section class="py-14 border-t border-white/5">
+<div class="max-w-[800px] mx-auto px-4 text-center">
+<span class="material-symbols-outlined text-primary/40 text-5xl mb-4 block">eco</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Be the Change You Wish to See</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">"No act of kindness, no matter how small, is ever wasted." Your support today plants seeds that grow into forests of opportunity for generations to come.</p>
+<a href="donate.html" class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-all duration-300">START YOUR IMPACT</a>
+</div>
+</section>
+
+<footer class="bg-surface-container-lowest w-full rounded-t-[32px] border-t border-white/10 mt-12">
+<div class="max-w-[1280px] mx-auto px-4 md:px-12 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="space-y-4 text-center md:text-left">
+<h3 class="font-headline-md text-on-surface">GoodWave</h3>
+<p class="font-label-caps text-on-surface-variant">© 2024 GoodWave. Engineering Social Good with Precision.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="programs.html">Programs</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Transparency</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary', 'active');
+      b.classList.add('glass-card', 'text-on-surface-variant');
+    });
+    btn.classList.add('bg-primary', 'text-on-primary', 'active');
+    btn.classList.remove('glass-card', 'text-on-surface-variant');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.program-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body></html>

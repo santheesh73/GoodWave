@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+site-preview.err.log
+site-preview.log
+package-lock.json

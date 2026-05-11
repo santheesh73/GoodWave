@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoodWave | Engineering Social Good</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<script src="tailwind.config.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+<div class="flex justify-between items-center px-4 md:px-12 h-20 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" id="menu-toggle">menu</span>
+<a href="index.html" class="font-display-xl text-headline-md tracking-tighter text-primary">GoodWave</a>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="nav-link-active font-label-caps text-label-caps" href="index.html">HOME</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="programs.html">PROGRAMS</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="impact.html">IMPACT</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="program-detail.html">TRANSPARENCY</a>
+</nav>
+<a href="donate.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-all duration-300">DONATE</a>
+</div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-80 rounded-r-3xl bg-surface-container-lowest/95 backdrop-blur-2xl border-r border-white/5 shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full" id="nav-drawer">
+<div class="p-8 flex items-center justify-between border-b border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-bold text-primary">GoodWave Member</p>
+<p class="text-xs text-on-surface-variant">Impact Level: Visionary</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" id="drawer-close">close</span>
+</div>
+<nav class="flex-1 py-8">
+<a class="bg-primary-container/20 text-primary border-l-4 border-primary px-6 py-4 flex items-center gap-4 text-body-md" href="index.html">
+<span class="material-symbols-outlined">home</span> Home
+</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="programs.html">
+<span class="material-symbols-outlined">folder_special</span> Programs
+</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="impact.html">
+<span class="material-symbols-outlined">query_stats</span> Impact
+</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="program-detail.html">
+<span class="material-symbols-outlined">account_balance</span> Transparency
+</a>
+<a class="text-on-surface-variant px-6 py-4 flex items-center gap-4 hover:bg-white/5 transition-all text-body-md" href="donate.html">
+<span class="material-symbols-outlined">volunteer_activism</span> Donate
+</a>
+</nav>
+</div>
+<div class="fixed inset-0 bg-black/50 z-[55] hidden" id="drawer-overlay"></div>
+
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center text-center px-4 overflow-hidden pb-16">
+<div class="absolute inset-0 z-0 overflow-hidden media-motion-frame">
+<img alt="Children learning together in a rural classroom" class="absolute inset-0 h-full w-full object-cover object-center opacity-28 media-motion-image" src="images/rural_education.png"/>
+<div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,18,24,0.88)_0%,rgba(20,18,24,0.72)_42%,rgba(20,18,24,0.82)_100%)]"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(255,217,102,0.18),transparent_32%),radial-gradient(circle_at_78%_82%,rgba(224,32,32,0.16),transparent_28%)]"></div>
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="z-10 max-w-4xl relative">
+<span class="inline-block px-4 py-1 rounded-full border border-primary/30 text-primary font-label-caps text-label-caps mb-6 bg-primary/5">MISSION CONTROL FOR GOOD</span>
+<h2 class="font-display-xl text-headline-lg-mobile md:text-display-xl mb-6">
+Every Donation <span class="text-gradient">Creates a Future</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+We bridge the gap between compassion and impact. Engineering social change through precision data and visionary human intent.
+</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<a href="donate.html" class="btn-gradient px-10 py-4 rounded-full text-white font-label-caps text-label-caps text-lg tracking-widest hover:scale-105 transition-all">DONATE NOW</a>
+<a href="programs.html" class="px-10 py-4 rounded-full border border-white/10 glass-card text-on-surface font-label-caps text-label-caps hover:bg-white/5 transition-all">EXPLORE PROGRAMS</a>
+</div>
+</div>
+</section>
+
+<!-- Impact Cards -->
+<section class="relative z-10 mt-12 md:mt-16 px-4">
+<div class="w-full max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-8 rounded-3xl glow-cyan flex flex-col items-center justify-center group hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">diversity_3</span>
+<h3 class="font-display-xl text-headline-md text-primary live-stat" data-target="12.5" data-suffix="k+">0</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Lives Impacted</p>
+</div>
+<div class="glass-card p-8 rounded-3xl glow-cyan flex flex-col items-center justify-center group hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">public</span>
+<h3 class="font-display-xl text-headline-md text-primary live-stat" data-target="48">0</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Communities</p>
+</div>
+<div class="glass-card p-8 rounded-3xl glow-cyan flex flex-col items-center justify-center group hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">verified</span>
+<h3 class="font-display-xl text-headline-md text-primary live-stat" data-target="95" data-suffix="%">0</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Funds to Programs</p>
+</div>
+</div>
+</section>
+
+<!-- Emotional Quote Banner -->
+<section class="pt-16 pb-28 md:pb-36 relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(103,80,164,0.08),transparent_70%)]"></div>
+<div class="max-w-[900px] mx-auto px-4 md:px-12 text-center relative z-10">
+<blockquote class="font-display-xl text-headline-lg-mobile md:text-headline-lg tracking-tight leading-snug mb-8">
+<span class="text-gradient">"Every child deserves the light of knowledge.</span> Every family deserves the warmth of good health. Every community deserves the hope of a better tomorrow."
+</blockquote>
+<div class="flex items-center justify-center gap-4">
+<div class="h-[1px] w-12 bg-primary/40"></div>
+<p class="font-label-caps text-label-caps text-primary tracking-widest">THE GOODWAVE PROMISE</p>
+<div class="h-[1px] w-12 bg-primary/40"></div>
+</div>
+</div>
+</section>
+
+<!-- Impact Statistics Section -->
+<section class="py-12 px-4 md:px-12 max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">Precision-Driven Impact</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Every rupee is accounted for. Real-time data visualization of our reach across the nation.</p>
+</div>
+<a href="impact.html" class="text-primary font-label-caps text-label-caps flex items-center gap-2 group">
+VIEW FULL REPORT <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-primary font-label-caps text-label-caps mb-2">EDUCATION REACH</p>
+<h4 class="font-headline-md text-headline-md mb-8"><span class="live-stat" data-target="8400" data-suffix="+">0</span> Students Enrolled</h4>
+<div class="w-full h-2 bg-surface-container-highest rounded-full mb-4 overflow-hidden">
+<div class="h-full w-[85%] btn-gradient rounded-full"></div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md"><span class="live-stat" data-target="85" data-suffix="%">0</span> towards yearly goal</p>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[200px]">school</span>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-8 group">
+<p class="text-tertiary font-label-caps text-label-caps mb-2">HEALTHCARE</p>
+<h4 class="font-headline-md text-headline-md mb-2"><span class="live-stat" data-target="250" data-suffix="+">0</span></h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Successful surgeries funded this quarter.</p>
+</div>
+<div class="glass-card rounded-3xl p-8 group">
+<p class="text-primary font-label-caps text-label-caps mb-2">REACH</p>
+<h4 class="font-headline-md text-headline-md mb-2"><span class="live-stat" data-target="12">0</span></h4>
+<p class="text-on-surface-variant font-body-md text-body-md">States actively receiving program support.</p>
+<span class="material-symbols-outlined text-primary text-4xl mt-10">map</span>
+</div>
+</div>
+</section>
+
+<!-- Featured Programs Section -->
+<section class="py-12 bg-surface-container-lowest/50">
+<div class="max-w-[1280px] mx-auto px-4 md:px-12">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Core Missions</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">Scalable solutions for systemic challenges in rural and underserved urban areas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<a href="program-detail.html" class="group cursor-pointer block">
+<div class="rounded-[32px] overflow-hidden mb-6 aspect-video relative media-motion-frame">
+<img alt="Rural Education" class="w-full h-full object-cover media-motion-image" src="images/rural_education.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-8">
+<span class="bg-primary/20 backdrop-blur-md text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] w-fit mb-2">EDUCATION</span>
+<h3 class="text-white font-headline-md text-headline-md">Rural Education Initiative</h3>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 px-2">Bridging the digital divide for over 50,000 students in isolated villages through tech-enabled learning centers.</p>
+<span class="text-primary font-label-caps text-label-caps flex items-center gap-2 ml-2">LEARN MORE <span class="material-symbols-outlined text-sm">north_east</span></span>
+</a>
+<a href="program-detail.html" class="group cursor-pointer block">
+<div class="rounded-[32px] overflow-hidden mb-6 aspect-video relative media-motion-frame">
+<img alt="Mobile Health Clinics" class="w-full h-full object-cover media-motion-image" src="images/healthcare_clinic.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-8">
+<span class="bg-tertiary/20 backdrop-blur-md text-tertiary border border-tertiary/30 px-3 py-1 rounded-full text-[10px] w-fit mb-2">HEALTHCARE</span>
+<h3 class="text-white font-headline-md text-headline-md">Mobile Health Clinics</h3>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 px-2">Specialized medical units providing diagnosis, primary care, and vaccinations to regions without hospital access.</p>
+<span class="text-primary font-label-caps text-label-caps flex items-center gap-2 ml-2">LEARN MORE <span class="material-symbols-outlined text-sm">north_east</span></span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Donation Impact Scale -->
+<section class="py-12 px-4">
+<div class="max-w-4xl mx-auto glass-card rounded-[40px] p-10 md:p-16 text-center glow-cyan">
+<h2 class="font-headline-lg text-headline-lg mb-4">How your donation helps</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-12">Small contributions powered by high-efficiency logistics lead to massive outcomes.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/40 transition-colors">
+<h4 class="text-primary font-display-xl text-headline-md mb-2">₹250</h4>
+<p class="font-body-md text-body-md text-on-surface">5 Full Meals</p>
+<p class="text-on-surface-variant text-sm mt-2">Nutritious hot meals for children in urban slums.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/40 transition-colors">
+<h4 class="text-primary font-display-xl text-headline-md mb-2">₹1,200</h4>
+<p class="font-body-md text-body-md text-on-surface">1 Month Education</p>
+<p class="text-on-surface-variant text-sm mt-2">Books, digital access, and tutoring for one student.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/40 transition-colors">
+<h4 class="text-primary font-display-xl text-headline-md mb-2">₹5,000</h4>
+<p class="font-body-md text-body-md text-on-surface">Medical Camp</p>
+<p class="text-on-surface-variant text-sm mt-2">Complete diagnostic camp for an entire village.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Emotional Quote: Before Stories -->
+<section class="py-12 border-t border-white/5">
+<div class="max-w-[800px] mx-auto px-4 md:px-12 text-center">
+<p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed">"We don't measure our success in donations received — <span class="text-primary font-bold not-italic">we measure it in smiles restored, dreams reignited, and communities standing tall.</span>"</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-4 tracking-widest">— GOODWAVE FOUNDATION</p>
+</div>
+</section>
+
+<!-- Success Stories -->
+<section class="py-12 overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-4 md:px-12">
+<h2 class="font-headline-lg text-headline-lg mb-12">The Human Story</h2>
+<div class="flex gap-8 overflow-x-auto pb-10 scrollbar-hide">
+<div class="min-w-[320px] md:min-w-[450px] glass-card rounded-3xl p-8 flex flex-col gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden media-motion-frame">
+<img alt="Success Story 1" class="w-full h-full object-cover media-motion-image" src="images/portrait_ananya.png"/>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface">"GoodWave didn't just give me a scholarship; they gave me a path to becoming a software engineer. Today, I'm supporting my family and my community."</p>
+<div>
+<p class="font-bold text-primary">Ananya R.</p>
+<p class="text-on-surface-variant text-sm">Tech Fellowship Graduate</p>
+</div>
+</div>
+<div class="min-w-[320px] md:min-w-[450px] glass-card rounded-3xl p-8 flex flex-col gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden media-motion-frame">
+<img alt="Success Story 2" class="w-full h-full object-cover media-motion-image" src="images/portrait_murugan.png"/>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface">"The mobile clinic saved my life when I couldn't travel to the city. Having doctors visit our village is a dream we never thought would come true."</p>
+<div>
+<p class="font-bold text-primary">Murugan S.</p>
+<p class="text-on-surface-variant text-sm">Community Elder</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Transparency Section -->
+<section class="py-12 px-4">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg mb-6">Transparency is our Core Code.</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-8">We believe you deserve to see exactly how your contribution is changing the world. Our ledger is open, our impact is audited, and our mission is absolute.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><span>Quarterly audited financial reports available to all.</span></li>
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><span>Real-time tracking for major community projects.</span></li>
+<li class="flex items-start gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><span>Zero administrative overhead on direct donations.</span></li>
+</ul>
+</div>
+<div class="flex-1 w-full glass-card rounded-[40px] p-8 border-primary/20 bg-primary/5">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline-md text-headline-md">Fund Allocation</h4>
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-caps text-label-caps">Programs &amp; Impact</span><span class="font-label-caps text-label-caps live-stat" data-target="95" data-suffix="%">0</span></div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-[95%] h-full btn-gradient"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-caps text-label-caps">Logistics &amp; Tech</span><span class="font-label-caps text-label-caps live-stat" data-target="3" data-suffix="%">0</span></div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-[3%] h-full bg-tertiary"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-caps text-label-caps">Administration</span><span class="font-label-caps text-label-caps live-stat" data-target="2" data-suffix="%">0</span></div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden"><div class="w-[2%] h-full bg-on-surface-variant"></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-12 text-center px-4">
+<div class="max-w-4xl mx-auto py-20 rounded-[40px] bg-gradient-to-br from-primary-container/20 to-secondary-container/20 border border-white/10 relative overflow-hidden">
+<h2 class="font-headline-lg text-headline-lg mb-6 relative z-10">Ready to build the future?</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-10 relative z-10 max-w-xl mx-auto">Join a global network of visionaries engineering a better tomorrow for everyone, everywhere.</p>
+<a href="donate.html" class="btn-gradient px-12 py-5 rounded-full text-white font-label-caps text-label-caps text-xl tracking-widest relative z-10 hover:scale-105 transition-transform inline-block">DONATE NOW</a>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full rounded-t-[32px] bg-surface-container-lowest border-t border-white/10">
+<div class="max-w-[1280px] mx-auto px-4 md:px-12 py-12 flex flex-col md:flex-row justify-between items-start gap-6">
+<div class="max-w-xs">
+<h2 class="font-headline-md text-on-surface mb-4">GoodWave</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">Engineering Social Good with Precision. A new era of humanitarian action starts here.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">PLATFORM</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="programs.html">Programs</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="impact.html">Impact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">RESOURCES</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Annual Reports</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Partners</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-4 md:px-12 py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 GoodWave. Engineering Social Good with Precision.</p>
+</div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+const liveStats = document.querySelectorAll('.live-stat');
+
+// Autonomous auto-scroll for testimonials
+const scrollContainer = document.querySelector('.overflow-x-auto');
+if (scrollContainer) {
+  let scrollSpeed = 0.5;
+  function autoScroll() {
+    scrollContainer.scrollLeft += scrollSpeed;
+    if (scrollContainer.scrollLeft >= (scrollContainer.scrollWidth - scrollContainer.clientWidth - 1)) {
+      scrollContainer.scrollLeft = 0;
+    }
+    requestAnimationFrame(autoScroll);
+  }
+  autoScroll();
+}
+
+function animateLiveStat(stat) {
+  if (stat.dataset.animated === 'true') return;
+  stat.dataset.animated = 'true';
+
+  const target = Number(stat.dataset.target || 0);
+  const suffix = stat.dataset.suffix || '';
+  const duration = 1600;
+  const startTime = performance.now();
+
+  function updateStat(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const currentValue = target * eased;
+    const displayValue = target % 1 === 0 ? Math.round(currentValue) : currentValue.toFixed(1);
+
+    stat.textContent = `${displayValue}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(updateStat);
+    }
+  }
+
+  requestAnimationFrame(updateStat);
+}
+
+if (liveStats.length) {
+  const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      animateLiveStat(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.45 });
+
+  liveStats.forEach(stat => statsObserver.observe(stat));
+}
+</script>
+</body>
+</html>

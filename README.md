@@ -1,96 +1,125 @@
-Create a professional README.md file for my GitHub project.
+# 🌊 GoodWave
 
-Project Name:
-GoodWave
+## Every Donation Creates a Future
 
-Tagline:
-Every Donation Creates a Future
+GoodWave is a modern nonprofit UI/UX hackathon website designed to help users discover meaningful social programs, understand real impact, and complete a smooth donation journey.
 
-Project Type:
-Nonprofit UI/UX Hackathon Website
+The project focuses on a futuristic dark-mode interface, glassmorphism design, animated interactions, responsive layouts, and a clear donation experience for social impact organizations.
 
-Project Description:
-GoodWave is a modern nonprofit website designed for a Next.js UI/UX Hackathon. The project helps users discover social impact programs, understand donation impact, explore program details, and complete a smooth donation journey. The website focuses on clean UI/UX, responsive design, emotional storytelling, program discovery, and donation experience.
+---
 
-Main Goal:
-Build a modern, minimalistic, mobile-first website template for international nonprofits.
+## 🚀 Project Overview
 
-Hackathon Requirements Covered:
-- Home Page
-- Programs Page
-- Program Detail Page
-- Donate Page
-- Impact / About Page
-- Seamless donation experience
-- Easy program discovery and sharing
-- Clean responsive mobile-first UI
-- GitHub repository
-- Live deployment-ready website
+GoodWave is built as a premium nonprofit web platform where users can:
 
-Tech Stack:
+- Explore social impact programs
+- View detailed program information
+- Understand transparent fund usage
+- Donate through a clean donation flow
+- See measurable impact statistics
+- Experience a smooth and responsive UI
+
+This project was created for a **Next.js UI/UX Hackathon** concept focused on building meaningful digital experiences for international nonprofits.
+
+---
+
+## ✨ Key Features
+
+- Modern nonprofit landing page
+- Programs discovery page
+- Program detail page
+- Donation flow page
+- Impact / About page
+- Futuristic dark-mode UI
+- Glassmorphism cards
+- Cyan-to-green glowing gradient buttons
+- Responsive mobile-first layout
+- Smooth animations and transitions
+- Animated progress bars
+- Hover effects on cards and buttons
+- Impact statistics section
+- Donation call-to-action sections
+- Trust and transparency focused design
+
+---
+
+## 🎨 UI/UX Design Highlights
+
+GoodWave uses a premium visual design system with:
+
+- Deep navy and midnight dark backgrounds
+- Glassmorphism card layouts
+- Bright cyan to neon green gradients
+- High-contrast typography
+- Rounded modern components
+- Smooth hover interactions
+- Clean spacing and visual hierarchy
+- Mobile-friendly navigation
+
+The design goal is to make the website feel like a **modern social-impact technology platform**, not a basic charity website.
+
+---
+
+## 🌀 Animations Included
+
+The website includes lightweight UI animations such as:
+
+- Fade-in page sections
+- Slide-up content reveal effects
+- Floating impact cards
+- Glowing CTA buttons
+- Hover lift effects on program cards
+- Smooth navigation interactions
+- Animated progress bars
+- Donation flow transition effects
+- Soft background glow movement
+
+These animations improve the user experience while keeping the website clean and performance-friendly.
+
+---
+
+## 📄 Pages
+
+| Page | Description |
+|---|---|
+| Home Page | Introduces the mission, impact stats, and donation CTA |
+| Programs Page | Allows users to explore social programs |
+| Program Detail Page | Shows detailed information about a selected program |
+| Donate Page | Provides a smooth donation experience |
+| Impact Page | Displays mission, vision, statistics, and transparency |
+
+---
+
+## 🛠️ Tech Stack
+
 - HTML
 - CSS
 - JavaScript
 - Tailwind CSS
 
-If the project uses Next.js, mention:
+If converted to a Next.js version, the stack can include:
+
 - Next.js
-- Tailwind CSS
 - React
+- Tailwind CSS
 
-Pages:
-- Home Page
-- Programs Page
-- Program Detail Page
-- Donate Page
-- Impact / About Page
+---
 
-Main Features:
-- Futuristic dark mode UI
-- Glassmorphism design
-- Cyan-to-green gradient buttons
-- Program discovery cards
-- Donation flow page
-- Impact statistics
-- Fund transparency section
-- Responsive layout
-- Smooth animations
-- Mobile-friendly navigation
-- Call-to-action sections
-- Professional nonprofit storytelling
+## 📁 Folder Structure
 
-Design Style:
-- Professional
-- Futuristic
-- Dark mode
-- Premium nonprofit platform
-- Glassmorphism cards
-- Glowing gradient buttons
-- Clean responsive layout
-
-README should include:
-1. Project title
-2. Tagline
-3. Project overview
-4. Features
-5. Pages
-6. Tech stack
-7. Folder structure
-8. Installation steps
-9. How to run locally
-10. Deployment instructions
-11. Hackathon explanation
-12. Screenshots section placeholder
-13. Live demo link placeholder
-14. GitHub repo link placeholder
-15. Author section
-
-Use clean markdown formatting.
-Make it professional and suitable for GitHub.
-Make the README look strong enough for a hackathon submission.
-
-Use this short submission explanation inside README:
-
-"GoodWave is a modern nonprofit website designed to improve program discovery, donor trust, and donation experience. It includes a home page, programs page, program detail page, donation page, and impact page. The project focuses on clean UI/UX, responsive layouts, transparent impact storytelling, and a smooth donation journey for social impact organizations."
-
-Generate the complete README.md content only.
+```txt
+GoodWave/
+│
+├── images/
+│
+├── index.html
+├── programs.html
+├── program-detail.html
+├── donate.html
+├── impact.html
+│
+├── shared.css
+├── nav.js
+├── tailwind.config.js
+├── package.json
+└── README.md
